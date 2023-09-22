@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Transition } from "@headlessui/react";
 import animationData from "../../assets/back.json";
 import Lottie from "react-lottie";
+import Image from "next/image";
 
 export function Pedido() {
     const [showPedido, setShowPedido] = useState(false);
@@ -30,7 +31,7 @@ export function Pedido() {
     };
 
     return (
-        <div className="rounded-lg relative border overflow-hidden border-red-500 w-[332px] min-h-full h-[calc(100vh-15rem)] flex items-center justify-center p-5">
+        <div className="w-[332px] h-[calc(100vh-15rem)] relative flex items-center justify-center min-h-full rounded-lg overflow-hidden">
             <Transition
                 show={showPedido}
                 enter="transform transition ease-in-out duration-300"
@@ -40,27 +41,19 @@ export function Pedido() {
                 leaveFrom="scale-100"
                 leaveTo="scale-0"
             >
-                <div className="flex flex-col items-center z-[999] gap-5">
-                    <h1 className="font-bold text-2xl z-[999]">
-                        Liga pra mim pra avisar
-                    </h1>
-                    <div className="flex items-center gap-4 z-[999]">
-                        <a
-                            href={`tel:${phoneNumber}`}
-                            className="p-3 border border-green-500 z-[999] rounded-lg bg-transparent hover:bg-green-500 transition-all"
-                        >
-                            ❤️Ligar para Rafa❤️
-                        </a>
-                    </div>
-                </div>
-                <div className="absolute w-full h-[calc(100vh-25rem)] transform right-10 top-15 z-10 pointer-events-none">
-                    <Lottie
-                        options={defaultOptions}
-                        height={200}
-                        width={340}
-                        isStopped={animationState.isStopped}
-                        isPaused={animationState.isPaused}
-                    />
+                <Image
+                    src="/convite.png"
+                    alt="Convite"
+                    width={360}
+                    height={360}
+                />
+                <div className="z-[999] flex gap-4 items-center justify-center mt-4">
+                    <a
+                        href={`https://api.whatsapp.com/send?phone=${phoneNumber}&text=EU ACEEEEITO AMOR ❤️!!`}
+                        className="border-[#B48133] z-[999] hover:bg-[#B48133] p-3 bg-transparent border rounded-lg transition-all"
+                    >
+                        ❤️Mande Mensagem pra mim❤️
+                    </a>
                 </div>
             </Transition>
         </div>

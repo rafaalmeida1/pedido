@@ -17,7 +17,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}><Suspense>{children}</Suspense></body>
+      <body className={inter.className}><Suspense><div className="bg-[#0c0c0c]">{children}</div></Suspense></body>
     </html>
   )
 }

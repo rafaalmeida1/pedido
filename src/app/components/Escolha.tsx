@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import { Transition } from "@headlessui/react";
-import animationData from "../../assets/flutuando.json";
+import animationData from "../../assets/back.json";
 import Lottie from "react-lottie";
 
 function getRandomPosition(maxX: number, maxY: number) {
@@ -73,7 +73,7 @@ export function Escolha({ changeFase }: EscolhaProps) {
                     <div className="flex items-center gap-4">
                         <button
                             onClick={changeFase}
-                            className="p-3 z-[9999] border border-green-500 rounded-lg bg-transparent hover:bg-green-500 transition-all"
+                            className="p-3 z-[9999] border border-[#B48133] rounded-lg bg-transparent hover:bg-[#B48133] transition-all"
                         >
                             Sim❤️
                         </button>
@@ -92,14 +92,14 @@ export function Escolha({ changeFase }: EscolhaProps) {
                     </div>
                     
                 </div>
-                <div className="absolute w-full h-[calc(100vh-25rem)] bottom-0 z-10 pointer-events-none">
-                <Lottie
-                    options={defaultOptions}
-                    height={400}
-                    width={300}
-                    isStopped={animationState.isStopped}
-                    isPaused={animationState.isPaused}
-                />
+                <div className="absolute w-full h-[calc(100vh-25rem)] transform right-6 top-15 z-10 pointer-events-none">
+                    <Lottie
+                        options={defaultOptions}
+                        height={200}
+                        width={340}
+                        isStopped={animationState.isStopped}
+                        isPaused={animationState.isPaused}
+                    />
                 </div>
             </Transition>
         </div>
